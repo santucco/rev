@@ -7,11 +7,10 @@
 
 
 //line license:1
-
-// This file is part of Rev version 0.1
+// This file is part of rev
 // Author Alexander Sychev
 //
-// Copyright (c) 2014 Alexander Sychev. All rights reserved.
+// Copyright (c) 2014, 2020 Alexander Sychev. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -63,7 +62,7 @@ import(
 
 //line rev.w:41
 
-"bitbucket.org/santucco/goacme"
+"github.com/santucco/goacme"
 
 
 

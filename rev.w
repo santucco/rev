@@ -39,7 +39,7 @@ if err!=nil {
 
 @
 @<Imports@>=
-"bitbucket.org/santucco/goacme"
+"github.com/santucco/goacme"
 
 @
 @<Opening the window by |id|@>=

@@ -1,7 +1,6 @@
-# This file is part of rev  version 0.1
-# Author Alexander Sychev
+# This file is part of rev
 #
-# Copyright (c) 2014 Alexander Sychev. All rights reserved.
+# Copyright (c) 2014, 2020 Alexander Sychev. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,21 +27,23 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+target=rev
+
 IFILES= \
-	rev.idx rev.log rev.toc rev.tex rev.scn
+	$(target).idx $(target).log $(target).toc $(target).tex $(target).scn
 
 .INTERMEDIATE: $(IFILES)
 
 TEXP?=xetex
 gcflags=-gcflags '-N -l'
 
-all: rev
+all: $(target)
 
-rev: rev.go
+$(target): $(target).go
 	go build $(gcflags)
 	@echo done
 
-doc: rev.pdf
+doc: $(target).pdf
 
 %.go: %.w
 	gotangle $< - $@
@@ -53,10 +54,10 @@ doc: rev.pdf
 %.tex %.scn: %.w
 	goweave  $<
 
-install: rev
+install: $(target)
 	go install
 
 clean:
-	rm -rf *.go *.pdf rev  $(IFILES)
+	rm -rf *.go *.pdf $(target)  $(IFILES)
 
 
